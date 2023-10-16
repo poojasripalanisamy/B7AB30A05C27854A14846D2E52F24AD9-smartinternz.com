@@ -1,0 +1,46 @@
+
+#3.1 Write a function called linear_search_product that takes the list of products and a target product name as input. The function should perform a linear search to find the target product in the list and return a list of indices of all occurrences of the product if found, or an empty list if the product is not found.
+def linear_search_product(product_list, target_product):
+    indices = []
+    for i, product in enumerate(product_list):
+        if product == target_product:
+            indices.append(i)
+    return indices
+
+# Example usage:
+products = ["apple", "banana", "apple", "orange", "apple"]
+target = "apple"
+result = linear_search_product(products, target)
+if result:
+    print(f"The product '{target}' was found at indices: {result}")
+else:
+    print(f"The product '{target}' was not found in the list.")
+
+#3.2 class Student:
+  def __init__(self, name, roll_number, cgpa):
+      self.name = name
+      self.roll_number = roll_number
+      self.cgpa = cgpa
+
+def sort_students(student_list):
+  # Sort the list of students in descending order of CGPA
+  sorted_students = sorted(student_list,
+                          key=lambda student: student.cgpa,
+                          reverse=True)
+  return sorted_students
+
+# Example usage:
+students = [
+  Student("Hari", "A123", 7.8),
+  Student("Srikanth", "A124", 8.9),
+  Student("Saumya", "A125", 9.1),
+  Student("Mahidhar", "A126", 9.9),
+]
+
+sorted_students = sort_students(students)
+
+# Print the sorted list of students
+for student in sorted_students:
+  print("Name: {}, Roll Number: {}, CGPA: {}".format(student.name,
+                                                   student.roll_number,
+                                                   student.cgpa))
